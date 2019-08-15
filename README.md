@@ -12,7 +12,7 @@ yum -y install gcc kernel-headers kernel-devel
 ```
 2. 编译TTM模块，编译后会在当前目录生成bce_ttm.ko文件
 ```
- make
+make
 ```
 3. 加载TTM模块
 ```
@@ -47,4 +47,4 @@ iptables -A INPUT -p tcp -s x.x.x.x --sport 80 -j DROP
 ./ttm_test -e eth0 -s x.x.x.x -d x.x.x.x -p 80
 ```
 > **注意：**
-> 其中-s后加的是源ip，-d后加的是目的ip，-e后加的是发送报文的网卡，可以通过执行./ttm_test -h查看参数指导
+> -s后加的是源ip，-d后加的是目的ip，-e后加的是libpcap监听的网卡，可以通过执行./ttm_test -h查看参数说明
