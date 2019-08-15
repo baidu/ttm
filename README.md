@@ -32,7 +32,7 @@ cd libpcap-1.5.3/
 make && make install
 ``` 
 > **注意：**
-> 如果安装libpcap失败，可能是缺少依赖库bison, flex，执行yum -y install bison flex
+> 如果安装libpcap失败，可能是缺少依赖库bison和flex，执行yum -y install bison flex
 
 2. 编译ttm_test程序
 ```
