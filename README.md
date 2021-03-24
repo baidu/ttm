@@ -8,7 +8,10 @@ TTM模块用来支持服务端应用程序获取客户端真实源IP。客户端
 
 1. 安装编译环境
 ```
+# CentOS
 yum -y install gcc kernel-headers kernel-devel
+# Ubuntu
+apt install -y linux-headers-$(uname -r)
 ```
 2. 编译TTM模块，编译后会在当前目录生成bce_ttm.ko文件
 ```
@@ -18,7 +21,7 @@ make
 ```
 mv bce_ttm.ko /lib/modules/$(uname -r)/kernel/net/ipv4/
 insmod /lib/modules/$(uname -r)/kernel/net/ipv4/bce_ttm.ko
-```  
+```
 
 ## 测试
 
@@ -26,11 +29,11 @@ insmod /lib/modules/$(uname -r)/kernel/net/ipv4/bce_ttm.ko
 1. 下载编译libpcap
 ```
 wget -c http://www.tcpdump.org/release/libpcap-1.5.3.tar.gz
-tar -zvxf libpcap-1.5.3.tar.gz 
+tar -zvxf libpcap-1.5.3.tar.gz
 cd libpcap-1.5.3/
 ./configure
 make && make install
-``` 
+```
 > **注意：**
 > 如果安装libpcap失败，可能是缺少依赖库bison和flex，执行yum -y install bison flex
 
